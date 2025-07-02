@@ -10,35 +10,35 @@ import { Badge } from "@/components/ui/badge"
 import { MessageCircle, Send, Bot, User, Loader2 } from "lucide-react"
 
 const staticResponses = {
-  "what products does kemin offer for animal nutrition":
-    "Kemin offers a comprehensive range of animal nutrition products including:\n\n• **Feed additives** - Antioxidants, acidifiers, and preservatives\n• **Nutritional ingredients** - Amino acids, vitamins, and minerals\n• **Gut health solutions** - Probiotics and prebiotics\n• **Performance enhancers** - Growth promoters and feed efficiency improvers\n• **Specialty ingredients** - Enzymes and organic trace minerals\n\nOur solutions are designed to improve animal health, performance, and food safety across poultry, swine, ruminants, and aquaculture.",
+  "what products does BI offer for animal nutrition":
+    "BI offers a comprehensive range of animal nutrition products including:\n\n• **Feed additives** - Antioxidants, acidifiers, and preservatives\n• **Nutritional ingredients** - Amino acids, vitamins, and minerals\n• **Gut health solutions** - Probiotics and prebiotics\n• **Performance enhancers** - Growth promoters and feed efficiency improvers\n• **Specialty ingredients** - Enzymes and organic trace minerals\n\nOur solutions are designed to improve animal health, performance, and food safety across poultry, swine, ruminants, and aquaculture.",
 
   "how can i improve feed efficiency in my livestock":
-    "Here are key strategies to improve feed efficiency in livestock:\n\n• **Optimize nutrition** - Use high-quality feed ingredients and balanced formulations\n• **Add enzymes** - Improve nutrient digestibility and absorption\n• **Maintain gut health** - Use probiotics and prebiotics to support digestive function\n• **Control feed quality** - Prevent oxidation and maintain freshness with antioxidants\n• **Monitor feed intake** - Ensure consistent and adequate nutrition delivery\n• **Use performance enhancers** - Consider approved growth promoters where applicable\n\nKemin's feed additives and nutritional solutions can help optimize these areas for better feed conversion ratios.",
+    "Here are key strategies to improve feed efficiency in livestock:\n\n• **Optimize nutrition** - Use high-quality feed ingredients and balanced formulations\n• **Add enzymes** - Improve nutrient digestibility and absorption\n• **Maintain gut health** - Use probiotics and prebiotics to support digestive function\n• **Control feed quality** - Prevent oxidation and maintain freshness with antioxidants\n• **Monitor feed intake** - Ensure consistent and adequate nutrition delivery\n• **Use performance enhancers** - Consider approved growth promoters where applicable\n\BI's feed additives and nutritional solutions can help optimize these areas for better feed conversion ratios.",
 
-  "what are kemin's sustainability initiatives":
-    "Kemin is committed to sustainability through several key initiatives:\n\n• **Sustainable sourcing** - Responsible procurement of raw materials\n• **Carbon footprint reduction** - Energy-efficient manufacturing processes\n• **Waste reduction** - Minimizing waste and maximizing resource utilization\n• **Water conservation** - Implementing water-saving technologies\n• **Renewable energy** - Investing in clean energy solutions\n• **Sustainable packaging** - Reducing packaging waste and using eco-friendly materials\n• **Community impact** - Supporting local communities and environmental stewardship\n\nWe're dedicated to improving quality of life while protecting our planet for future generations.",
+  "what are BI's sustainability initiatives":
+    "BI is committed to sustainability through several key initiatives:\n\n• **Sustainable sourcing** - Responsible procurement of raw materials\n• **Carbon footprint reduction** - Energy-efficient manufacturing processes\n• **Waste reduction** - Minimizing waste and maximizing resource utilization\n• **Water conservation** - Implementing water-saving technologies\n• **Renewable energy** - Investing in clean energy solutions\n• **Sustainable packaging** - Reducing packaging waste and using eco-friendly materials\n• **Community impact** - Supporting local communities and environmental stewardship\n\nWe're dedicated to improving quality of life while protecting our planet for future generations.",
 
   "tell me about aquaculture solutions":
-    "Kemin's aquaculture solutions are designed to optimize fish and shrimp health and performance:\n\n• **Feed additives** - Antioxidants to maintain feed quality and shelf life\n• **Gut health products** - Probiotics and organic acids for digestive health\n• **Immune support** - Nutritional solutions to enhance disease resistance\n• **Water quality management** - Products to maintain optimal aquatic environments\n• **Growth performance** - Ingredients to improve feed conversion and growth rates\n• **Stress reduction** - Solutions to help aquatic animals cope with environmental stress\n\nOur aquaculture team works closely with producers to develop customized nutrition programs for various species and production systems.",
+    "BI's aquaculture solutions are designed to optimize fish and shrimp health and performance:\n\n• **Feed additives** - Antioxidants to maintain feed quality and shelf life\n• **Gut health products** - Probiotics and organic acids for digestive health\n• **Immune support** - Nutritional solutions to enhance disease resistance\n• **Water quality management** - Products to maintain optimal aquatic environments\n• **Growth performance** - Ingredients to improve feed conversion and growth rates\n• **Stress reduction** - Solutions to help aquatic animals cope with environmental stress\n\nOur aquaculture team works closely with producers to develop customized nutrition programs for various species and production systems.",
 
   "how do i contact technical support":
-    "You can reach Kemin's technical support team through several channels:\n\n• **Phone**: Contact your regional Kemin office\n• **Email**: Send inquiries to our technical support team\n• **Website**: Visit kemin.com for contact information and resources\n• **Field representatives**: Connect with your local Kemin representative\n• **Online portal**: Access technical resources and submit support requests\n\nOur technical experts are available to help with product applications, troubleshooting, and optimization strategies. Response times are typically within 24-48 hours for most inquiries.",
+    "You can reach BI's technical support team through several channels:\n\n• **Phone**: Contact your regional BI office\n• **Email**: Send inquiries to our technical support team\n• **Website**: Visit .com for contact information and resources\n• **Field representatives**: Connect with your local BI representative\n• **Online portal**: Access technical resources and submit support requests\n\nOur technical experts are available to help with product applications, troubleshooting, and optimization strategies. Response times are typically within 24-48 hours for most inquiries.",
 
-  "what food safety solutions does kemin provide":
-    "Kemin offers comprehensive food safety solutions including:\n\n• **Antimicrobials** - Natural and synthetic preservatives to control pathogens\n• **Antioxidants** - Prevent rancidity and extend shelf life\n• **Mold inhibitors** - Control fungal growth in feed and food products\n• **Sanitizers** - Cleaning and disinfection solutions for processing facilities\n• **Testing services** - Analytical support for quality assurance\n• **HACCP support** - Guidance on food safety management systems\n• **Regulatory compliance** - Help navigate food safety regulations\n\nOur solutions help ensure food safety from farm to fork, protecting both animal and human health.",
+  "what food safety solutions does BI provide":
+    "BI offers comprehensive food safety solutions including:\n\n• **Antimicrobials** - Natural and synthetic preservatives to control pathogens\n• **Antioxidants** - Prevent rancidity and extend shelf life\n• **Mold inhibitors** - Control fungal growth in feed and food products\n• **Sanitizers** - Cleaning and disinfection solutions for processing facilities\n• **Testing services** - Analytical support for quality assurance\n• **HACCP support** - Guidance on food safety management systems\n• **Regulatory compliance** - Help navigate food safety regulations\n\nOur solutions help ensure food safety from farm to fork, protecting both animal and human health.",
 
   hello:
-    "Hello! Welcome to Kemin Customer Service. I'm here to help you with questions about our products, services, and solutions. How can I assist you today?",
+    "Hello! Welcome to BI Customer Service. I'm here to help you with questions about our products, services, and solutions. How can I assist you today?",
 
-  hi: "Hi there! I'm your Kemin customer service assistant. Whether you need information about animal nutrition, food safety, aquaculture, or any of our other solutions, I'm here to help. What can I do for you?",
+  hi: "Hi there! I'm your BI customer service assistant. Whether you need information about animal nutrition, food safety, aquaculture, or any of our other solutions, I'm here to help. What can I do for you?",
 
-  help: "I'm here to help you with:\n\n• Product information and applications\n• Technical support and troubleshooting\n• Sustainability initiatives\n• Contact information\n• General inquiries about Kemin's solutions\n\nFeel free to ask me anything about Kemin's products and services, or choose from the quick questions below!",
+  help: "I'm here to help you with:\n\n• Product information and applications\n• Technical support and troubleshooting\n• Sustainability initiatives\n• Contact information\n• General inquiries about BI's solutions\n\nFeel free to ask me anything about BI's products and services, or choose from the quick questions below!",
 
   "thank you":
-    "You're welcome! I'm glad I could help. If you have any other questions about Kemin's products or services, please don't hesitate to ask. Have a great day!",
+    "You're welcome! I'm glad I could help. If you have any other questions about BI's products or services, please don't hesitate to ask. Have a great day!",
 
-  thanks: "You're welcome! Is there anything else I can help you with regarding Kemin's solutions or services?",
+  thanks: "You're welcome! Is there anything else I can help you with regarding BI's solutions or services?",
 }
 
 const findStaticResponse = (message: string): string | null => {
@@ -171,12 +171,12 @@ export function CustomerServiceChat() {
   }
 
   const quickQuestions = [
-    "What products does Kemin offer for animal nutrition?",
+    "What products does BI offer for animal nutrition?",
     "How can I improve feed efficiency in my livestock?",
-    "What are Kemin's sustainability initiatives?",
+    "What are BI's sustainability initiatives?",
     "Tell me about aquaculture solutions",
     "How do I contact technical support?",
-    "What food safety solutions does Kemin provide?",
+    "What food safety solutions does BI provide?",
   ]
 
   const handleQuickQuestion = (question: string) => {
@@ -241,9 +241,9 @@ export function CustomerServiceChat() {
             <div>
               <CardTitle className="flex items-center gap-2">
                 <Bot className="h-5 w-5 text-kemin-red" />
-                Kemin Customer Service AI
+                BI Customer Service AI
               </CardTitle>
-              <CardDescription>Get instant help with your Kemin-related questions</CardDescription>
+              <CardDescription>Get instant help with your BI-related questions</CardDescription>
             </div>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
               <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
@@ -260,7 +260,7 @@ export function CustomerServiceChat() {
                 <div className="w-16 h-16 bg-kemin-red/10 rounded-full flex items-center justify-center mx-auto">
                   <Bot className="h-8 w-8 text-kemin-red" />
                 </div>
-                <h3 className="text-lg font-semibold">Welcome to Kemin Customer Service</h3>
+                <h3 className="text-lg font-semibold">Welcome to BI Customer Service</h3>
                 <p className="text-muted-foreground max-w-md">
                   I'm here to help you with questions about our products, services, and solutions. How can I assist you
                   today?
@@ -296,7 +296,7 @@ export function CustomerServiceChat() {
                     {messages.length === 0 && (
                       <div className="text-center text-muted-foreground py-8">
                         <Bot className="h-8 w-8 mx-auto mb-2 text-kemin-red" />
-                        <p>Hello! I'm your Kemin customer service assistant. How can I help you today?</p>
+                        <p>Hello! I'm your BI customer service assistant. How can I help you today?</p>
                       </div>
                     )}
 

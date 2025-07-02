@@ -82,12 +82,12 @@ export function BusinessIntelligenceDashboard() {
     <SidebarProvider>
       <Sidebar className="bg-background dark:bg-kemin-gray-900">
         <SidebarHeader className="border-b border-border">
-          <div className="flex items-center gap-3 px-4 py-3">
+          <div className="flex items-center gap-3 px-4 py-1">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-kemin-red text-white shadow-lg">
               <BarChart3 className="h-5 w-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-base font-bold text-[rgba(229,62,62,1)]">Kemin Analytics</span>
+              <span className="text-base font-bold text-[rgba(229,62,62,1)]">BI Analytics</span>
               <span className="text-xs text-muted-foreground">Business Intelligence Hub</span>
             </div>
           </div>

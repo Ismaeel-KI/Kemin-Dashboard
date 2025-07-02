@@ -17,7 +17,7 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#E53E3E", // Kemin red-orange
+          DEFAULT: "#E53E3E",
           foreground: "#FFFFFF",
         },
         secondary: {
@@ -44,7 +44,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Kemin-inspired color palette with dark mode support
         kemin: {
           red: "#E53E3E",
           "red-light": "#FEB2B2",

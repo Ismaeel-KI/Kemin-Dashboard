@@ -413,7 +413,7 @@ export function GrowthOverview() {
 
                 {timeFilter === "year" && (
                   <Select value={selectedYear} onValueChange={setSelectedYear}>
-                    <SelectTrigger className="w-32">
+                    <SelectTrigger className="w-40">
                       <Calendar className="h-4 w-4 mr-2" />
                       <SelectValue placeholder="Select year" />
                     </SelectTrigger>
