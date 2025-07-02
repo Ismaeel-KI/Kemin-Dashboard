@@ -106,7 +106,7 @@ export function BusinessIntelligenceDashboard() {
                       onClick={() => setActiveSection(item.id)}
                       className={`w-full justify-start gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 ${
                         activeSection === item.id
-                          ? "bg-kemin-red text-white shadow-lg"
+                          ? "bg-kemin-red text-red-500 shadow-lg"
                           : "text-foreground hover:bg-muted hover:text-foreground"
                       }`}
                     >
