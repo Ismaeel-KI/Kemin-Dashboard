@@ -45,8 +45,8 @@ const findStaticResponse = (message: string): string | null => {
   const normalizedMessage = message.toLowerCase().trim()
 
   // Check for exact matches first
-  if (staticResponses[normalizedMessage]) {
-    return staticResponses[normalizedMessage]
+  if (Object.prototype.hasOwnProperty.call(staticResponses, normalizedMessage)) {
+    return staticResponses[normalizedMessage as keyof typeof staticResponses]
   }
 
   // Check for partial matches
