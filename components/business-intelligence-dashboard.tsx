@@ -81,7 +81,7 @@ export function BusinessIntelligenceDashboard() {
   return (
     <SidebarProvider>
       <Sidebar className="bg-background dark:bg-kemin-gray-900">
-        <SidebarHeader className="border-b border-border dark:bg-kemin-gray-950 bg-[rgba(58,58,58,1)]">
+        <SidebarHeader className="border-b border-border">
           <div className="flex items-center gap-3 px-4 py-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-kemin-red text-white shadow-lg">
               <BarChart3 className="h-5 w-5" />
@@ -92,7 +92,7 @@ export function BusinessIntelligenceDashboard() {
             </div>
           </div>
         </SidebarHeader>
-        <SidebarContent className="dark:bg-kemin-gray-900 bg-[rgba(221,221,221,1)] border-[rgba(58,58,58,1)] text-white">
+        <SidebarContent className="dark:bg-kemin-gray-900 bg-slate-100 border-[rgba(58,58,58,1)] text-white">
           <SidebarGroup>
             <SidebarGroupLabel className="text-muted-foreground font-semibold text-xs uppercase tracking-wider px-4 py-2">
               Analytics Dashboard
@@ -121,7 +121,7 @@ export function BusinessIntelligenceDashboard() {
         </SidebarContent>
       </Sidebar>
       <SidebarInset className="bg-background">
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-6 shadow-sm bg-[rgba(221,221,221,1)]">
+        <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-6 shadow-sm bg-slate-100 dark:bg-background">
           <SidebarTrigger className="-ml-1 text-muted-foreground hover:text-kemin-red" />
           <Separator orientation="vertical" className="mr-2 h-4 bg-border" />
           <div className="flex items-center gap-3 flex-1">
