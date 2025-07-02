@@ -195,7 +195,7 @@ export function CustomerServiceChat() {
   return (
     <div className="space-y-6">
       {/* Chat Overview Cards */}
-      <div className="grid gap-4 md:grid-cols-3">
+      {/* <div className="grid gap-4 md:grid-cols-3">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center gap-2">
@@ -232,10 +232,10 @@ export function CustomerServiceChat() {
             <p className="text-xs text-muted-foreground">Customer rating</p>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       {/* Main Chat Interface */}
-      <Card className="h-[500px] flex flex-col">
+      <Card className="flex flex-col">
         <CardHeader className="border-b flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>

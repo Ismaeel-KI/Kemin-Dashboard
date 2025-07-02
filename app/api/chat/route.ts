@@ -25,5 +25,5 @@ Keep responses concise but informative, and always prioritize customer satisfact
     messages,
   })
 
-  return result.toAIStreamResponse()
+  return result.toDataStreamResponse()
 }
