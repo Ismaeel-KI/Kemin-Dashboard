@@ -87,7 +87,7 @@ export function BusinessIntelligenceDashboard() {
               <BarChart3 className="h-5 w-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-base font-bold text-[rgba(229,62,62,1)]">BI Analytics</span>
+              <span className="text-base font-bold text-[rgba(229,62,62,1)]">Grainzo Analytics</span>
               <span className="text-xs text-muted-foreground">Business Intelligence Hub</span>
             </div>
           </div>
