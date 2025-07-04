@@ -64,7 +64,58 @@ const staticResponses = {
   "what are the current market trends":
   "Current market trends in animal nutrition include:\n\n• Gut Health Focus – Rising use of probiotics and postbiotics\n• Antibiotic Reduction – Demand for natural alternatives is increasing\n• Sustainability – Strong interest in carbon-neutral and eco-friendly feed solutions\n• Precision Nutrition – Customized formulations for performance and health\n• Aquaculture Expansion – Particularly in shrimp and freshwater fish sectors\n\nGrainzois actively innovating to align with these evolving trends.",
 
-  
+  "what species do you serve":
+  "Grainzo offers solutions for a variety of species including poultry, swine, ruminants (cattle, sheep, goats), and aquaculture (fish and shrimp). We also support pet and companion animal nutrition.",
+
+  "are your products safe":
+  "Yes, Grainzo's products meet international safety standards and are manufactured under strict quality control. We hold certifications such as ISO, HACCP, and GMP+ to ensure consistent safety and performance.",
+
+  "do you offer free samples":
+  "In many cases, Grainzo provides product samples for trials. Please contact our sales or technical team to discuss sample availability based on your region and application.",
+
+  "how can i buy your products":
+  "To purchase Grainzo products, you can:\n\n• Contact your local distributor or Grainzo representative\n• Fill out the inquiry form on our official website\n• Reach out via email or phone listed in the Contact section",
+
+  "what does grainzo do":
+  "Grainzo specializes in innovative animal nutrition and food safety solutions. We provide feed additives, nutritional supplements, gut health products, and preservation technologies to support livestock health and performance.",
+
+  "where is grainzo located":
+  "Grainzo operates globally with regional offices and partners across multiple countries. Please visit our website to find your nearest Grainzo office or distributor.",
+
+}
+
+const keywordMap: Record<string, string> = {
+  "feed efficiency": "how can i improve feed efficiency in my livestock",
+  "gut health": "how can i support immune health in livestock",
+  "sustainability": "what are Grainzo's sustainability initiatives",
+  "aquaculture": "tell me about aquaculture solutions",
+  "technical support": "how do i contact technical support",
+  "food safety": "what food safety solutions does Grainzoprovide",
+  "sales": "how can i contact sales",
+  "market trends": "what are the current market trends",
+  "market": "what are the current market trends",
+  "sales performance": "what are the latest sales statistics",
+  "lab testing": "does Grainzooffer lab testing or analysis services",
+  "preserve grain": "how can i preserve grain quality during storage",
+  "contact": "how can i contact sales",
+  "what do you do": "what does grainzo do",
+  "location": "where is grainzo located",
+  "buy": "how can i buy your products",
+  "purchase": "how can i buy your products",
+  "sample": "do you offer free samples",
+  "safe": "are your products safe",
+  "shipping": "do you ship internationally",
+  "species": "what species do you serve",
+  "what about the company": "what does grainzo do",
+  "what is grainzo": "what does grainzo do",
+  "what is grainzo's mission": "what does grainzo do",
+  "what is grainzo's vision": "what does grainzo do",
+  "what is grainzo's values": "what does grainzo do",
+  "what is grainzo's history": "what does grainzo do",
+  "what is grainzo's culture": "what does grainzo do",
+  "about grainzo": "what does grainzo do",
+  "about the company": "what does grainzo do",
+
 }
 
 const findStaticResponse = (message: string): string | null => {
@@ -76,6 +127,11 @@ const findStaticResponse = (message: string): string | null => {
   }
 
   // Check for partial matches
+  for (const [keyword, responseKey] of Object.entries(keywordMap)) {
+    if (normalizedMessage.includes(keyword)) {
+      return staticResponses[responseKey]
+    }
+  }
   for (const [key, response] of Object.entries(staticResponses)) {
     if (
       key.toLowerCase().includes(normalizedMessage) ||
@@ -186,7 +242,7 @@ export function CustomerServiceChat() {
         }
         if (!receivedContent) {
           assistantMessage.content =
-            "I'm sorry, I didn’t quite understand that. Could you rephrase or choose one of the quick questions?";
+            "I'm sorry, Try again or contact our support team directly.";
           setMessages((prev) =>
             prev.map((m) => (m.id === assistantMessage.id ? { ...m, content: assistantMessage.content } : m))
           );
@@ -196,7 +252,7 @@ export function CustomerServiceChat() {
           id: (Date.now() + 1).toString(),
           role: "assistant",
           content:
-            "I apologize, but I'm having trouble connecting to our AI service right now. Please try again later or contact our support team directly.",
+            "I apologize, but please try again later or contact our support team directly.",
         }
         setMessages((prev) => [...prev, errorMessage])
       }
@@ -250,7 +306,7 @@ export function CustomerServiceChat() {
       const fallbackMessage = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: "I'm sorry, I didn't quite understand that. Could you rephrase or choose one of the quick questions?",
+        content: "I'm sorry, try again or contact our support team directly.",
       }
       setMessages((prev) => [...prev, fallbackMessage])
       setIsLoading(false)
