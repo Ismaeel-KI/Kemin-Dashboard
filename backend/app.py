@@ -23,20 +23,18 @@ def chat():
 
     last_user_message = chat_history[-1]["content"] if chat_history[-1]["role"] == "user" else ""
 
-    max_history = 10  # or fewer, depending on your token budget
+    max_history = 4  # last 4 messages (2 user + 2 assistant)
     trimmed_history = chat_history[-max_history:]
 
     messages = [
                    {
                        "role": "system",
                        "content": (
-                           "You are Grainzo's AI Customer Service Assistant. "
-                           "Answer questions about products, company, services, and solutions clearly. "
-                           "If there is a typo, guess what the user meant and respond politely."
+                           "You are Grainzo's AI Customer Service Assistant."
+                           "Answer clearly and politely. Guess typos."
                        )
                    }
-    ] + trimmed_history
-
+               ] + trimmed_history
     if not messages:
         return jsonify({"error": "No messages provided"}), 400
 
