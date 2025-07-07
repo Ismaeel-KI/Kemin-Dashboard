@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import openai
-import os
 import together
 
 app = Flask(__name__)
@@ -24,17 +23,19 @@ def chat():
 
     last_user_message = chat_history[-1]["content"] if chat_history[-1]["role"] == "user" else ""
 
+    max_history = 10  # or fewer, depending on your token budget
+    trimmed_history = chat_history[-max_history:]
+
     messages = [
-        {
-            "role": "system",
-            "content": (
-                "You are Grainzo's AI Customer Service Assistant. "
-                "Answer questions about products, company, services, and solutions clearly. "
-                "If there is a typo, guess what the user meant and respond politely."
-            )
-        },
-        {"role": "user", "content": last_user_message}
-    ]
+                   {
+                       "role": "system",
+                       "content": (
+                           "You are Grainzo's AI Customer Service Assistant. "
+                           "Answer questions about products, company, services, and solutions clearly. "
+                           "If there is a typo, guess what the user meant and respond politely."
+                       )
+                   }
+    ] + trimmed_history
 
     if not messages:
         return jsonify({"error": "No messages provided"}), 400
