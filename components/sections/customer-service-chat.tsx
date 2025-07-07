@@ -115,6 +115,8 @@ const keywordMap: Record<string, string> = {
   "what is grainzo's culture": "what does grainzo do",
   "about grainzo": "what does grainzo do",
   "about the company": "what does grainzo do",
+  "about company": "what does grainzo do",
+
 
 }
 
@@ -168,18 +170,17 @@ export function CustomerServiceChat() {
     const userMessage = { id: Date.now().toString(), role: "user", content: input.trim() }
     setMessages((prev) => [...prev, userMessage])
 
-    // Mark that user has sent a message
+
     setHasUserSentMessage(true)
 
     const currentInput = input.trim()
     setInput("")
     setIsLoading(true)
 
-    // Check for static response first
+
     const staticResponse = findStaticResponse(currentInput)
 
     if (staticResponse) {
-      // Use static response
       setTimeout(() => {
         const assistantMessage = {
           id: (Date.now() + 1).toString(),
@@ -188,74 +189,42 @@ export function CustomerServiceChat() {
         }
         setMessages((prev) => [...prev, assistantMessage])
         setIsLoading(false)
-      }, 500) // Small delay to simulate thinking
+      }, 500)
     } else {
-      // Use AI API for complex queries
       try {
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: [...messages, userMessage].map((m) => ({ role: m.role, content: m.content })),
-          }),
-        })
+          const response = await fetch("http://localhost:5009/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              messages: [...messages, userMessage].map((m) => ({
+                role: m.role,
+                content: m.content,
+              })),
+            }),
+          });
 
-        if (!response.ok) throw new Error("Failed to get response")
+          const result = await response.json();
 
-        const reader = response.body?.getReader()
-        if (!reader) throw new Error("No reader available")
-
-        const assistantMessage = {
-          id: (Date.now() + 1).toString(),
-          role: "assistant",
-          content: "",
-        }
-
-        setMessages((prev) => [...prev, assistantMessage])
-
-        const decoder = new TextDecoder()
-        let receivedContent = false;
-        while (true) {
-          const { done, value } = await reader.read()
-          if (done) break
-
-          const chunk = decoder.decode(value)
-          const lines = chunk.split("\n")
-
-          for (const line of lines) {
-            if (line.startsWith("0:")) {
-              try {
-                const data = JSON.parse(line.slice(2))
-
-                if (data.content) {
-                  receivedContent = true;
-                  assistantMessage.content += data.content
-                  setMessages((prev) =>
-                    prev.map((m) => (m.id === assistantMessage.id ? { ...m, content: assistantMessage.content } : m)),
-                  )
-                }
-              } catch (e) {
-                // Ignore parsing errors
-              } 
-            }
+          if (!response.ok || result.error) {
+            throw new Error(result.error || "Unknown error from backend");
           }
+
+          const assistantMessage = {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            content: result.response || "Sorry, I couldn't understand your request.",
+          };
+
+          setMessages((prev) => [...prev, assistantMessage]);
+        } catch (error) {
+          const errorMessage = {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            content:
+              "Something went wrong. Please try again later or contact support.",
+          };
+          setMessages((prev) => [...prev, errorMessage]);
         }
-        if (!receivedContent) {
-          assistantMessage.content =
-            "I'm sorry, Try again or contact our support team directly.";
-          setMessages((prev) =>
-            prev.map((m) => (m.id === assistantMessage.id ? { ...m, content: assistantMessage.content } : m))
-          );
-}
-      } catch (error) {
-        const errorMessage = {
-          id: (Date.now() + 1).toString(),
-          role: "assistant",
-          content:
-            "I apologize, but please try again later or contact our support team directly.",
-        }
-        setMessages((prev) => [...prev, errorMessage])
-      }
       finally{setIsLoading(false)}
       
     }
